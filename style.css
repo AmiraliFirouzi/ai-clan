@@ -134,6 +134,30 @@ html { scrollbar-width: thin; scrollbar-color: var(--border) var(--bg); }
   white-space: pre;
 }
 
+/* glitch burst — added for ~0.4s every few seconds by script.js */
+#ascii-logo.glitching {
+  animation: glitch-jitter 0.32s steps(2, end) infinite;
+}
+@keyframes glitch-jitter {
+  0%, 100% { transform: none; text-shadow: var(--glow); }
+  20% {
+    transform: translate(-2px, 1px) skewX(-3deg);
+    text-shadow: 3px 0 rgba(120, 235, 255, 0.5), -3px 0 rgba(255, 100, 120, 0.4), var(--glow);
+  }
+  40% {
+    transform: translate(2px, -1px) skewX(3deg);
+    text-shadow: -3px 0 rgba(120, 235, 255, 0.5), 3px 0 rgba(255, 100, 120, 0.4), var(--glow);
+  }
+  60% {
+    transform: translate(-1px, 0) skewX(-1deg);
+    text-shadow: 2px 0 rgba(255, 255, 255, 0.45), -2px 0 rgba(255, 255, 255, 0.3), var(--glow);
+  }
+  80% {
+    transform: translate(1px, 1px);
+    text-shadow: -2px 0 rgba(120, 235, 255, 0.4), 2px 0 rgba(255, 100, 120, 0.35), var(--glow);
+  }
+}
+
 .tagline {
   min-height: 1.7em;
   margin: 0 auto 1.6rem;

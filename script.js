@@ -21,10 +21,70 @@ function fmtDate(ev) {
 
 /* ----------------------------- branding ----------------------------- */
 document.title = `${SITE_DATA.siteName}@web:~`;
-document.getElementById("ascii-logo").textContent = SITE_DATA.asciiLogo;
 document.getElementById("titlebar-left").textContent = SITE_DATA.titlebar;
 document.getElementById("titlebar-right").textContent = SITE_DATA.titlebarRight;
 document.getElementById("footer-name").textContent = SITE_DATA.siteName;
+
+/* ------------------------ logo glitch effect ------------------------ */
+/* every ~3.5–7s the ASCII logo glitches for a blink: random character
+   corruption + RGB-split jitter, then snaps back. Purely decorative. */
+const logoEl = document.getElementById("ascii-logo");
+const LOGO_ORIGINAL = SITE_DATA.asciiLogo;
+const GLITCH_CHARS = "█▓▒░▄▀╬╣╠║═─│┼/\\|<>*+=#@$%&";
+let logoCurrent = LOGO_ORIGINAL.split("");
+
+function renderLogo() {
+  logoEl.textContent = logoCurrent.join("");
+}
+
+function corruptLogoOnce(strength) {
+  const count = Math.max(4, Math.round(LOGO_ORIGINAL.length * strength));
+  for (let k = 0; k < count; k++) {
+    const i = Math.floor(Math.random() * LOGO_ORIGINAL.length);
+    const ch = LOGO_ORIGINAL[i];
+    if (ch === "\n" || ch === " ") continue;
+    if (logoCurrent[i] !== ch) continue; // already glitching this cell
+    logoCurrent[i] = GLITCH_CHARS[Math.floor(Math.random() * GLITCH_CHARS.length)];
+    setTimeout(() => {
+      logoCurrent[i] = LOGO_ORIGINAL[i];
+      renderLogo();
+    }, 60 + Math.random() * 200);
+  }
+  renderLogo();
+}
+
+function glitchBurst() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  logoEl.classList.add("glitching");
+  const pulses = 2 + Math.floor(Math.random() * 2); // 2–3 pulses per burst
+  for (let p = 0; p < pulses; p++) {
+    setTimeout(
+      () => corruptLogoOnce(0.05 + Math.random() * 0.05),
+      p * 90 + Math.random() * 40
+    );
+  }
+  setTimeout(() => logoEl.classList.remove("glitching"), pulses * 90 + 280);
+}
+
+function scheduleLogoGlitch() {
+  setTimeout(() => {
+    glitchBurst();
+    scheduleLogoGlitch();
+  }, 3500 + Math.random() * 3500);
+}
+
+let lastHoverGlitch = 0;
+logoEl.addEventListener("pointerenter", () => {
+  const now = Date.now();
+  if (now - lastHoverGlitch > 3000) {
+    lastHoverGlitch = now;
+    glitchBurst(); // small easter egg: hover the logo to glitch it
+  }
+});
+
+renderLogo();
+scheduleLogoGlitch();
+setTimeout(glitchBurst, 900); // welcome glitch right after load
 
 /* ------------------------ next event + countdown -------------------- */
 const nextLine = document.getElementById("next-event-line");
