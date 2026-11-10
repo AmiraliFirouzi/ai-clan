@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Clan — a student community for artificial intelligence. Talks, workshops and hands-on projects.">
+  <meta name="color-scheme" content="dark">
+  <title>ai_clan@web:~</title>
+
+  <!-- terminal " >_ " favicon (inline SVG, no extra file needed) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3Crect%20width='16'%20height='16'%20fill='%23050608'/%3E%3Ctext%20x='1.5'%20y='12'%20font-family='monospace'%20font-size='10'%20fill='%23f3f6fa'%3E%3E_%3C/text%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ambient effects -->
+  <canvas id="snow" aria-hidden="true"></canvas>
+  <div id="noise" aria-hidden="true"></div>
+  <div class="crt" aria-hidden="true"></div>
+
+  <!-- ============ hero : name / one-liner / next event ============ -->
+  <header class="hero" id="home">
+
+    <!-- filled from SITE_DATA.asciiLogo in data.js -->
+    <pre id="ascii-logo" aria-hidden="true"></pre>
+
+    <!-- filled from SITE_DATA.tagline in data.js (typewriter effect) -->
+    <p class="tagline">
+      <span id="typewriter"></span><span class="cursor" aria-hidden="true">▊</span>
+    </p>
+
+    <!-- filled automatically from SITE_DATA.events in data.js -->
+    <p class="next-event" id="next-event-line">next_event &gt;&gt; loading...</p>
+
+    <!-- section links, right above the big window -->
+    <nav aria-label="sections">
+      <ul class="hero-links">
+        <li><a href="#home">[home]</a></li>
+        <li><a href="#about">[about]</a></li>
+        <li><a href="#events">[events]</a></li>
+        <li><a href="#join">[join]</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ the one big terminal window ============ -->
+    <div class="panel window">
+
+      <div class="window-titlebar">
+        <span id="titlebar-left"></span>
+        <span id="titlebar-right"></span>
+      </div>
+
+      <!-- welcome / about — filled from SITE_DATA.about -->
+      <section class="win-section" id="about">
+        <h2 class="section-title">[ welcome.txt ]<span class="blink" aria-hidden="true">_</span></h2>
+        <div class="section-body" id="about-body">
+          <noscript><p class="empty">// enable JavaScript to load this page</p></noscript>
+        </div>
+      </section>
+
+      <!-- events log — filled from SITE_DATA.events -->
+      <section class="win-section" id="events">
+        <h2 class="section-title">[ events.log ]<span class="blink" aria-hidden="true">_</span></h2>
+        <div class="section-body">
+          <p class="events-hint">// press <kbd>+</kbd> on an event to expand its summary</p>
+          <div id="events-list">
+            <noscript><p class="empty">// enable JavaScript to see the events</p></noscript>
+          </div>
+        </div>
+      </section>
+
+      <!-- join us / contact — filled from SITE_DATA.contacts -->
+      <section class="win-section" id="join">
+        <h2 class="section-title">[ join_us.sh ]<span class="blink" aria-hidden="true">_</span></h2>
+        <div class="section-body">
+          <p class="cmd">$ ./join_us.sh --you</p>
+          <ul class="contact-list" id="contact-list"></ul>
+          <p class="join-note" id="join-note"></p>
+        </div>
+      </section>
+
+    </div>
+
+    <footer class="footer-meta">
+      <span>© <span id="year">2026</span> <span id="footer-name">ai_clan</span></span>
+      <button id="snow-toggle" type="button" aria-pressed="true">[ snow: ON ]</button>
+      <span class="eof">[EOF]</span>
+    </footer>
+
+  </main>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
