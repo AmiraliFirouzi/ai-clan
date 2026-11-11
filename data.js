@@ -55,9 +55,9 @@ const SITE_DATA = {
 
   // راه‌های ارتباطی فوتر. label را کوتاه نگه دار تا زیر هم بنشینند.
   contacts: [
-    { label: "email",    value: "hello@example.com", href: "mailto:hello@example.com" },
-    { label: "telegram", value: "@example",          href: "https://t.me/example" },
-    { label: "github",   value: "example",           href: "https://github.com/example" },
+    { label: "email",    value: "amirali.firouzi@atu.ac.ir", href: "mailto:amirali.firouzi@atu.ac.ir" },
+    { label: "telegram", value: "@Amiiiiiiiiiiraliii",          href: "https://t.me/Amiiiiiiiiiiraliii" },
+    { label: "github",   value: "AmiraliFirouzi",           href: "https://github.com/AmiraliFirouzi" },
   ],
   joinNote: "everyone welcome — no experience required, just curiosity.",
 
@@ -78,23 +78,6 @@ const SITE_DATA = {
         "Our first official meetup. We introduce the association, present " +
         "the roadmap for this semester and collect ideas for future " +
         "sessions. Everyone is welcome — bring your friends!",
-    },
-    {
-      date: "2026-12-04",
-      time: "17:30",
-      title: "Workshop — Python for AI beginners",
-      summary:
-        "A hands-on session covering the Python stack we use all the time: " +
-        "NumPy, Pandas, and a first look at training a tiny neural network. " +
-        "Laptops required, experience optional.",
-    },
-    {
-      date: "2026-10-16",
-      time: "18:00",
-      title: "First gathering — meet & greet",
-      summary:
-        "An informal gathering to meet everyone interested in AI at the " +
-        "university. We talked about community goals and planned the kickoff.",
-    },
+    }
   ],
 };
