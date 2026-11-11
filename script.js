@@ -8,6 +8,7 @@ const DAYS = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 const pad = (n) => String(n).padStart(2, "0");
 
 function parseEvent(ev) {
+  if (!ev || !ev.date) return null;
   const [y, m, d] = ev.date.split("-").map(Number);
   const [hh, mm] = (ev.time || "18:00").split(":").map(Number);
   return { ...ev, dt: new Date(y, m - 1, d, hh || 0, mm || 0) };
@@ -91,8 +92,8 @@ const nextLine = document.getElementById("next-event-line");
 
 function tick() {
   const now = new Date();
-  const next = SITE_DATA.events
-    .map(parseEvent)
+  const events = (SITE_DATA.events || []).map(parseEvent).filter(Boolean);
+  const next = events
     .filter((e) => e.dt > now)
     .sort((a, b) => a.dt - b.dt)[0];
 
@@ -200,9 +201,9 @@ function renderEvents() {
   const now = new Date();
   /* strict date order: soonest upcoming event on top, everything after it
      in descending date order (past events appear newest → oldest) */
-  const events = SITE_DATA.events.map(parseEvent).sort((a, b) => b.dt - a.dt);
-  const nextUp = SITE_DATA.events
-    .map(parseEvent)
+  const parsed = (SITE_DATA.events || []).map(parseEvent).filter(Boolean);
+  const events = parsed.slice().sort((a, b) => b.dt - a.dt);
+  const nextUp = parsed
     .filter((e) => e.dt > now)
     .sort((a, b) => a.dt - b.dt)[0]; // closest upcoming event
 
@@ -256,7 +257,7 @@ function renderEvents() {
     const inner = document.createElement("div");
     inner.className = "event-body-inner";
     const p = document.createElement("p");
-    p.textContent = ev.summary;
+    p.textContent = ev.summary || "// no details provided yet.";
     inner.appendChild(p);
     body.appendChild(inner);
 
