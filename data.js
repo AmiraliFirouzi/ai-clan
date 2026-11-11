@@ -57,7 +57,8 @@ const SITE_DATA = {
   contacts: [
     { label: "email",    value: "amirali.firouzi@atu.ac.ir", href: "mailto:amirali.firouzi@atu.ac.ir" },
     { label: "telegram", value: "@Amiiiiiiiiiiraliii",          href: "https://t.me/Amiiiiiiiiiiraliii" },
-    { label: "github",   value: "AmiraliFirouzi",           href: "https://github.com/AmiraliFirouzi" },
+    { label: "github",   value: "ai_clan",           href: "https://github.com/AmiraliFirouzi/ai-clan" },
+    { label: "linkedin",   value: "ai_clan",           href: "https://www.linkedin.com/company/ai-clan" },
   ],
   joinNote: "everyone welcome — no experience required, just curiosity.",
 
