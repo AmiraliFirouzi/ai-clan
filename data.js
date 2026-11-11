@@ -71,13 +71,10 @@ const SITE_DATA = {
   // summary : متنی که با زدن + باز می‌شود
   events: [
     {
-      date: "2026-11-20",
-      time: "18:00",
-      title: "Kickoff meeting — intro to the association",
+      date: "2026-11-17",
+      time: "13:00",
+      title: "meet and great",
       summary:
-        "Our first official meetup. We introduce the association, present " +
-        "the roadmap for this semester and collect ideas for future " +
-        "sessions. Everyone is welcome — bring your friends!",
     }
   ],
 };
