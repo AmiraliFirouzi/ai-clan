@@ -74,7 +74,7 @@ const SITE_DATA = {
       date: "2026-11-17",
       time: "13:00",
       title: "meet and great",
-      summary:
+      summary:,
     }
   ],
 };
