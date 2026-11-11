@@ -39,7 +39,7 @@ const SITE_DATA = {
   about: [
     {
       cmd: "> whoami",
-      text: "we are <strong>ai_clan</strong>, a student association for artificial intelligence at the university — a small clan of people who like teaching machines and helping each other level up.",
+      text: "we are <strong>ai_clan</strong>, a student association for artificial intelligence at the Allameh Tabataba'i University — a small clan of people who like teaching machines and helping each other level up.",
     },
     {
       cmd: "> cat mission.txt",
