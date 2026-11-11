@@ -73,7 +73,7 @@ const SITE_DATA = {
   events: [
     {
       date: "2026-11-17",
-      time: "13:00",
+      time: "12:00",
       title: "meet and great",
       summary: "",
     }
