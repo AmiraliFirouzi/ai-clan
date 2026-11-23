@@ -72,7 +72,7 @@ const SITE_DATA = {
   // summary : متنی که با زدن + باز می‌شود
   events: [
     {
-      date: "2026-11-17",
+      date: "2026-11-24",
       time: "12:00",
       title: "meet and great",
       summary: "",
