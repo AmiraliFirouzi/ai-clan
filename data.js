@@ -75,7 +75,7 @@ const SITE_DATA = {
       date: "2026-11-24",
       time: "12:00",
       title: "meet and great",
-      summary: "First session of **AI Clan**: [Sobhan Dehghani](https://www.linkedin.com/in/sobhan-dehghani/) introduced the club, and **[Amirali Firouzi](https://www.linkedin.com/in/amirali-firouzi-2b714335a/)** presented the paper **[A FIX FOR SOFTMAX AND CROSS-ENTROPY](https://www.alphaxiv.org/abs/2610.31642)**. [Slides, notes & resources](https://github.com/AmiraliFirouzi/ai-clan/tree/main/Event%20files/2026-11-24)",
+      summary: 'First session of <b>AI Clan</b>: <a href="https://www.linkedin.com/in/sobhan-dehghani/" target="_blank">Sobhan Dehghani</a> introduced the club, and <a href="https://www.linkedin.com/in/amirali-firouzi-2b714335a/" target="_blank"><b>Amirali Firouzi</b></a> presented the paper <a href="https://www.alphaxiv.org/abs/2610.31642" target="_blank"><b>A FIX FOR SOFTMAX AND CROSS-ENTROPY</b></a>. <a href="https://github.com/AmiraliFirouzi/ai-clan/tree/main/Event%20files/2026-11-24" target="_blank">Slides, notes & resources</a>',
     }
   ],
 };
