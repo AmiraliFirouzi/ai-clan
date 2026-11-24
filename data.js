@@ -75,7 +75,7 @@ const SITE_DATA = {
       date: "2026-11-24",
       time: "12:00",
       title: "meet and great",
-      summary: "",
+      summary: "First session of **AI Clan**: [Sobhan Dehghani](https://www.linkedin.com/in/sobhan-dehghani/) introduced the AI CLAN, and **[Amirali Firouzi](https://www.linkedin.com/in/amirali-firouzi-2b714335a/)** presented the paper **[A FIX FOR SOFTMAX AND CROSS-ENTROPY](https://www.alphaxiv.org/pdf/2610.31642)**.**[slides, notes & resources](https://github.com/AmiraliFirouzi/ai-clan/tree/main/Event%20files/2026-11-24)**",
     }
   ],
 };
