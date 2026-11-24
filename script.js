@@ -257,7 +257,7 @@ function renderEvents() {
     const inner = document.createElement("div");
     inner.className = "event-body-inner";
     const p = document.createElement("p");
-    p.textContent = ev.summary || "// no details provided yet.";
+    p.innerHTML = ev.summary || "// no details provided yet."; // owner-authored HTML allowed
     inner.appendChild(p);
     body.appendChild(inner);
 
